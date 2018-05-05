@@ -21,7 +21,7 @@
       </div>
     );
   }
-
+  
   function ColorSelector(props) {
     function colorOptions() {
       return props.colors.map(function(name) {
@@ -44,14 +44,16 @@
   }
 
   function ProductImage(props) {
-    return <img src={`../../../assets/${props.color}.jpg`} alt="Product Image" />;
+    return (
+      <img src={`../../../assets/${props.color}.jpg`} alt="Product Image" />
+    );
   }
 
   var ProductCustomizer = createReactClass({
     getInitialState: function() {
-      var sizes = window.Inventory.allSizes,
-        colors = window.Inventory.allColors;
-
+      var sizes = window.Inventory.allSizes;
+      var colors = window.Inventory.allColors;
+      
       return {
         color: "red",
         colors: colors,
